@@ -1,58 +1,43 @@
-Array Operations
-Problem 1: Sum of Distinct Elements
-Description
-Given two sets of elements, find the sum of all distinct elements from the set. The output should include the sum of elements that are present in either of the given sets.
+# Algorithms Readme
 
-Solution
-The solution utilizes arrays to store distinct elements and calculates the sum.
+This repository contains pseudocode for three algorithms related to sets and vectors.
 
-Algorithm
-Initialize sum to 0.
-Compare each element of set one with the second set. If the element is not present, add it to the distinct elements array.
-Perform the vice versa to add elements from the second set.
-Calculate the sum of distinct elements.
+## Problem 1: SumOfDistinctElements
 
-function findSumOfDistinctElements(arr1, arr2) {
-  let distinctElements = [];
+### Description
+The `SumOfDistinctElements` algorithm calculates the sum of distinct elements from two sets (`set1` and `set2`). It uses nested loops to compare elements and accumulate the sum.
 
-  for (let element of arr1) {
-    if (!arr2.includes(element)) {
-      distinctElements.push(element);
-    }
-  }
+### Usage
+1. Provide values for `set1` and `set2`.
+2. Run the algorithm.
+3. The algorithm calculates and prints the sum of distinct elements.
 
-  for (let element of arr2) {
-    if (!arr1.includes(element)) {
-      distinctElements.push(element);
-    }
-  }
+## Problem 2: Dot Product and Orthogonal Vectors
 
-  let sum = distinctElements.reduce((acc, curr) => acc + curr, 0);
-  return sum;
-}
+### Procedure: procedure_name
 
-// Example usage
-let arr1 = [3, 1, 7, 9];
-let arr2 = [2, 4, 1, 9, 3];
-let result = findSumOfDistinctElements(arr1, arr2);
-console.log(`Output: ${result}`);
+#### Description
+The `procedure_name` procedure calculates the dot product of two arrays (`arr1` and `arr2`) and stores the result in the variable `total`.
 
-Problem 2: Dot Product and Orthogonality Check
-Description
-Calculate the dot product of two vectors and determine if they are orthogonal. The dot product of two orthogonal vectors is zero.
+#### Usage
+1. Call the procedure, providing values for `arr1` and `arr2`.
+2. The procedure calculates the dot product, and the result is stored in `total`.
 
-Solution
-The solution provides functions to calculate the dot product and check for orthogonality using JavaScript arrays.
+### Function: dot_product
 
-Algorithm
-Implement a function dotProduct to calculate the dot product of two vectors.
-Implement a function areVectorsOrthogonal to check if two vectors are orthogonal using the dot product.
-Use these functions to determine orthogonality for n pairs of vectors.
+#### Description
+The `dot_product` function calculates the dot product of two arrays (`arr1` and `arr2`) and returns the result.
 
-// Example vectors
-let vector1 = [1, 2, 3];
-let vector2 = [4, -2, 1];
+#### Usage
+1. Call the function, providing values for `arr1` and `arr2`.
+2. The function returns the computed dot product.
 
-// Calculate dot product and check for orthogonality
-let result = areVectorsOrthogonal(vector1, vector2);
-console.log(`Are vectors orthogonal? ${result}`);
+### Algorithm: orthogonal
+
+#### Description
+The `orthogonal` algorithm checks if vectors (`v1`, `v2`, and `v3`) are orthogonal based on their dot products.
+
+#### Usage
+1. Provide values for vectors `v1`, `v2`, and `v3`.
+2. Run the algorithm.
+3. The algorithm checks and prints the orthogonal relationships between vectors.

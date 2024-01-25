@@ -1,90 +1,117 @@
-  function findSumOfDistinctElements(arr1, arr2) {
-  let arr1 = [3, 1, 7, 9];
-  let arr2 = [2, 4, 1, 9, 3];
-  let result = findSumOfDistinctElements({7}, {2,4});
-  console.log(`Output: {13}`);
-    return sumOfDistinctElements;{13}
-}
+// Problem 1
+ALGORITHM SumOfDistinctElements
+// Computes the sum of distinct elements from two sets
+VAR
+    set1 : ARRAY_OF INTEGER[4];
+    set2 : ARRAY_OF INTEGER[5];
+    sum : INTEGER := 0;
+BEGIN
+ // Initialize sets
+    set1=[3, 1, 7, 9]
+    set2=[2, 4, 1, 9, 3];
+   // Iterate over elements of set1
+    FOR i FROM 0 TO set1.length-1 STEP 1  DO
+    // Check if the current element is present in set2
+        FOR j FROM 0 TO set2.length-1 STEP 1  DO
+            IF (set1[i] = set2[j]) THEN
+                break;
+            END_IF
+        END_FOR
+  // If the element is not present in set2, add it to the sum
+        IF (j=set2.length) THEN
+            sum = sum +set1[i]
+        END_IF
+    END_FOR
+ // Iterate over elements of set2 using a similar process
+    FOR i FROM 0 TO set2.length-1 STEP 1  DO
+        FOR j FROM 0 TO set1.length-1 STEP 1  DO
+            IF (set2[i] = set1[j]) THEN
+                break;
+            END_IF
+        END_FOR
 
-  let vector1 = [1, 2, 3];
-  let vector2 = [4, -2, 1];
-  let result = areVectorsOrthogonal(vector1, vector2);
-  console.log(`Are vectors orthogonal? ${result}`);
+        IF (j=set1.length) THEN
+            sum = sum +set2[i]
+        END_IF
+    END_FOR
+ // Print the final sum of distinct elements
+    Write(sum)
 
-
-Problem 1
-// Define a function to find the sum of distinct elements from two arrays
- function findSumOfDistinctElements(arr1, arr2) 
-  // Example arrays
- {let arr1 = [3, 1, 7, 9];
-  let arr2 = [2, 4, 1, 9, 3];
-  // Initialize an array to store distinct elements
-  let distinctElements = [7,2,4];
- // Initialize a variable to store the sum
-  let sum = 0;
-   // Loop through elements of arr1 (incorrect syntax in the loop)
-  for (let 3, 1, 7, 9) {
- // Check if elements of arr2 (incorrect syntax) are included
-    if (arr2.includes(2, 4, 1, 9, 3)) {
- // If included, push a specific value (7) to distinctElements
-      distinctElements.push(7);
-    }
-  }
-   // Loop through elements of arr2 (incorrect syntax in the loop)
-  for (let 2, 4, 1, 9, 3) {
-      // Check if elements of arr1 (incorrect syntax) are included
-    if (set1.includes(3, 1, 7, 9)) {
-        // If included, push specific values (2, 4) to distinctElements
-      distinctElements.push(2,4);
-    }
-  }
-  // Calculate the sum of distinct elements using reduce
-  sum = distinctElements.reduce((acc, curr) => acc + curr, 0);
-
-  // Return the calculated sum
-  return sum; 13
-}
-  // Example arrays
-   let arr1 = [3, 1, 7, 9];
-   let arr2 = [2, 4, 1, 9, 3];
-   // Call the function with incorrect arguments ({7}, {2,4})
-   let result = findSumOfDistinctElements({7}, {2,4});
-   // Log the result to the console (incorrect template literal syntax)
-   console.log(`Output: {13}`);
-   
-  // Return an undefined variable (sumOfDistinctElements)
-   return sumOfDistinctElements;{13}
+END
 
 
+// Problem 2
+PROCEDURE procedure_name(arr1 : ARRAY_OF INTEGER[], arr2 : ARRAY_OF INTEGER[], total: INTEGER)
+// Computes the dot product of two arrays and stores the result in 'total'
 
-Problem 2
-// Function to calculate the dot product of two vectors
-  let vector1 = [1, 2, 3];
-  let vector2 = [4, -2, 1];
-  let result = areVectorsOrthogonal(vector1, vector2);
-  console.log(`Are vectors orthogonal? ${result}`);
-  // Function to calculate the dot product of two vectors
-  function dotProduct(v1, v2) {
-  let result = 0;
+VAR
 
-  // Ensure both vectors have the same length
-  if (v1.length === v2.length) {
-    // Iterate through each element and calculate the product
-    for (let i = 0; i < v1.length; i++) {
-      result += v1[i] * v2[i];
-    }
-  } else {
-    // Throw an error if vectors have different lengths
-    console.error('Vectors must have the same length for dot product calculation.');
-  }
+BEGIN
+    total:=0
+        // Check if the arrays have the same length
+    IF (arr1.length <> arr2.length) THEN
+        break;
+    END_IF
+ // Iterate over elements of both arrays and calculate the dot product
+    FOR i FROM 0 TO arr1.length-1  STEP 1  DO
+        total:= total + (arr1[i] *arr2[i])
+    END_FOR
+    
 
-  return result;
-}
+END
 
-// Function to check if two vectors are orthogonal
- function areVectorsOrthogonal(v1, v2) {
-     // Calculate the dot product using the dotProduct function
-  let dotProd = dotProduct(v1, v2);
-   // Check if the dot product is zero to determine orthogonality
-  return dotProd === 0;
-}
+
+
+
+
+FUNCTION dot_product(arr1 : ARRAY_OF INTEGER[], arr2 : ARRAY_OF INTEGER[] ) : INTEGER
+// Computes the dot product of two arrays and returns the result
+VAR
+    total : INTEGER:= 0;
+BEGIN
+   // Check if the arrays have the same length
+    IF (arr1.length <> arr2.length) THEN
+        RETURN "They are not of the same length"  // Return an error message
+    END_IF
+// Iterate over elements of both arrays and calculate the dot product
+    FOR i FROM 0 TO arr1.length-1  STEP 1  DO
+        total:= total + (arr1[i] *arr2[i])
+    END_FOR
+       // Return the computed dot product 
+    RETURN total ;
+END
+
+
+
+
+// Checks if vectors are orthogonal based on their dot products
+ALGORITHM orthogonal
+VAR
+    v1 : ARRAY_OF INTEGER[4];
+    v2 : ARRAY_OF INTEGER[4];
+    v3 : ARRAY_OF INTEGER[4];
+BEGIN
+ // Initialize vectors
+    v1=[1,0,0,1]
+    v2=[0,1,0,0]
+    v3=[0,0,0,1]
+// Check if v1 and v2 are orthogonal vectors
+    IF (dot_product(v1,v2)=0) THEN //v1 and v2 are 
+        Write("v1 and v2 are othogonal vectors")
+    ELSE
+        Write("v1 and v2 they are not othogonal")
+    END_IF
+ // Check if v1 and v3 are orthogonal vectors
+    IF (dot_product(v1,v3)=0) THEN //v1 and v3 are not 
+        Write("v1 and v3 are othogonal vectors")
+    ELSE
+        Write("v1 and v3 they are not othogonal")
+    END_IF
+    // Check if v2 and v3 are orthogonal vectors
+    IF (dot_product(v2,v3)=0) THEN //v2 and v are orthogonal
+        Write("v2 and v3 are othogonal vectors")
+    ELSE
+        Write("v2 and v3 they are not othogonal")
+    END_IF
+
+END
