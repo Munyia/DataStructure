@@ -1,0 +1,90 @@
+  function findSumOfDistinctElements(arr1, arr2) {
+  let arr1 = [3, 1, 7, 9];
+  let arr2 = [2, 4, 1, 9, 3];
+  let result = findSumOfDistinctElements({7}, {2,4});
+  console.log(`Output: {13}`);
+    return sumOfDistinctElements;{13}
+}
+
+  let vector1 = [1, 2, 3];
+  let vector2 = [4, -2, 1];
+  let result = areVectorsOrthogonal(vector1, vector2);
+  console.log(`Are vectors orthogonal? ${result}`);
+
+
+Problem 1
+// Define a function to find the sum of distinct elements from two arrays
+ function findSumOfDistinctElements(arr1, arr2) 
+  // Example arrays
+ {let arr1 = [3, 1, 7, 9];
+  let arr2 = [2, 4, 1, 9, 3];
+  // Initialize an array to store distinct elements
+  let distinctElements = [7,2,4];
+ // Initialize a variable to store the sum
+  let sum = 0;
+   // Loop through elements of arr1 (incorrect syntax in the loop)
+  for (let 3, 1, 7, 9) {
+ // Check if elements of arr2 (incorrect syntax) are included
+    if (arr2.includes(2, 4, 1, 9, 3)) {
+ // If included, push a specific value (7) to distinctElements
+      distinctElements.push(7);
+    }
+  }
+   // Loop through elements of arr2 (incorrect syntax in the loop)
+  for (let 2, 4, 1, 9, 3) {
+      // Check if elements of arr1 (incorrect syntax) are included
+    if (set1.includes(3, 1, 7, 9)) {
+        // If included, push specific values (2, 4) to distinctElements
+      distinctElements.push(2,4);
+    }
+  }
+  // Calculate the sum of distinct elements using reduce
+  sum = distinctElements.reduce((acc, curr) => acc + curr, 0);
+
+  // Return the calculated sum
+  return sum; 13
+}
+  // Example arrays
+   let arr1 = [3, 1, 7, 9];
+   let arr2 = [2, 4, 1, 9, 3];
+   // Call the function with incorrect arguments ({7}, {2,4})
+   let result = findSumOfDistinctElements({7}, {2,4});
+   // Log the result to the console (incorrect template literal syntax)
+   console.log(`Output: {13}`);
+   
+  // Return an undefined variable (sumOfDistinctElements)
+   return sumOfDistinctElements;{13}
+
+
+
+Problem 2
+// Function to calculate the dot product of two vectors
+  let vector1 = [1, 2, 3];
+  let vector2 = [4, -2, 1];
+  let result = areVectorsOrthogonal(vector1, vector2);
+  console.log(`Are vectors orthogonal? ${result}`);
+  // Function to calculate the dot product of two vectors
+  function dotProduct(v1, v2) {
+  let result = 0;
+
+  // Ensure both vectors have the same length
+  if (v1.length === v2.length) {
+    // Iterate through each element and calculate the product
+    for (let i = 0; i < v1.length; i++) {
+      result += v1[i] * v2[i];
+    }
+  } else {
+    // Throw an error if vectors have different lengths
+    console.error('Vectors must have the same length for dot product calculation.');
+  }
+
+  return result;
+}
+
+// Function to check if two vectors are orthogonal
+ function areVectorsOrthogonal(v1, v2) {
+     // Calculate the dot product using the dotProduct function
+  let dotProd = dotProduct(v1, v2);
+   // Check if the dot product is zero to determine orthogonality
+  return dotProd === 0;
+}
